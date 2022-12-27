@@ -32,9 +32,11 @@ function App() {
             <button
               key={name}
               onClick={() => setMood(name)}
-              className={`shadow border gap-2 flex flex-row lg:flex-col border-base-300 rounded-lg btn normal-case ${
-                mood === name ? color : "btn-ghost"
-              } ${mood === name ? "border-2 border-base-300" : "".trim()}`}
+              className={`shadow border gap-2 flex flex-row lg:flex-col rounded-lg btn normal-case ${
+                mood === name
+                  ? `${color}`
+                  : "bg-base-200 text-base-content btn-ghost"
+              }`}
             >
               <span>{name}</span> <span>{emoji}</span>
             </button>
@@ -50,7 +52,7 @@ function App() {
             <button
               key={c}
               onClick={() => setCategory(c)}
-              className={`shadow border-base-300 btn rounded-lg btn-ghost normal-case ${
+              className={`shadow border-base-300 btn rounded-lg btn-ghost normal-case bg-base-200 ${
                 category === c ? "btn-active" : "".trim()
               }`}
             >
