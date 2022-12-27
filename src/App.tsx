@@ -1,9 +1,16 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { MOODS, CATEGORIES } from "./utils/constants";
+import { generateAffirmations } from "./utils/openai";
 
 function App() {
   const [mood, setMood] = useState<string>("");
   const [category, setCategory] = useState<string>("");
+
+  useEffect(() => {
+    if (mood) {
+      generateAffirmations(mood).then((resp) => console.log(resp));
+    }
+  }, [mood]);
 
   const canSubmit = Boolean(mood.length > 0 && category.length > 0);
   const resetState = () => {
