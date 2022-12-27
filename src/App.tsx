@@ -11,31 +11,45 @@ function App() {
     setCategory("");
   };
 
+  const moodIcon = (mood: string) => {
+    const { emoji } = MOODS.find((m) => m.name === mood) || {};
+    return emoji;
+  };
+
+  const textColor = (mood: string) => {
+    const { color } = MOODS.find((m) => m.name === mood) || {};
+    return `text-${color?.split("-")[1]}`;
+  };
+
   return (
     <div className="prose max-w-none w-full">
-      <div className="max-w-3xl mx-auto px-4">
-        <h3>Pick your Mood: {mood}</h3>
-        <div className="grid grid-cols-1 md:grid-cols-3">
+      <div className="max-w-xl mx-auto px-4">
+        <h3 className="mt-3 text-center md:text-left text-4xl md:text-2xl">
+          Mood: {moodIcon(mood)}
+        </h3>
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2">
           {MOODS.map(({ color, name, emoji }) => (
             <button
               key={name}
               onClick={() => setMood(name)}
-              className={`shadow rounded-none btn ${color} ${
-                mood === name ? "border-2 border-base-content" : ""
-              }`}
+              className={`shadow border gap-2 flex flex-row lg:flex-col border-base-300 rounded-lg btn normal-case ${
+                mood === name ? color : "btn-ghost"
+              } ${mood === name ? "border-2 border-base-300" : "".trim()}`}
             >
-              {name} {emoji}
+              <span>{name}</span> <span>{emoji}</span>
             </button>
           ))}
         </div>
 
-        <h3>Pick affirmation category: {category}</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        <h3 className="flex flex-col md:flex-row text-center md:text-left text-4xl md:text-2xl">
+          Affirmation category: <span className="text-xl">{category}</span>
+        </h3>
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3">
           {CATEGORIES.map((c) => (
             <button
               key={c}
               onClick={() => setCategory(c)}
-              className={`border rounded-none border-base-300 btn btn-ghost normal-case ${
+              className={`shadow border-base-300 btn rounded-lg btn-ghost normal-case ${
                 category === c ? "btn-active" : "".trim()
               }`}
             >

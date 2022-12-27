@@ -34,6 +34,7 @@ export const MOODS = [
 export const CATEGORIES = [
   "Gratitude",
   "Mindfulness and presence",
+  "Self-love and self-worth",
   "Personal growth",
   "Success and achievement",
   "Relationships",
