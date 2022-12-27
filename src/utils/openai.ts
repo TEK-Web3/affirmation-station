@@ -6,12 +6,14 @@ const config = new Configuration({
 const chatGptClient = new OpenAIApi(config);
 
 const generateAffirmations = async (mood: string) => {
-  return chatGptClient.createCompletion({
+  const { data } = await chatGptClient.createCompletion({
     model: "text-davinci-003",
     prompt: `Create a list of 5 positive affirmations for someone who is ${mood}`,
     temperature: 0.5,
     max_tokens: 2048,
   });
+
+  return data;
 };
 
 export { generateAffirmations };
