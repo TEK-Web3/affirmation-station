@@ -41,8 +41,9 @@ function App() {
           ))}
         </div>
 
-        <h3 className="flex flex-col md:flex-row text-center md:text-left text-4xl md:text-2xl">
-          Affirmation category: <span className="text-xl">{category}</span>
+        <h3 className="flex flex-col md:flex-row text-center md:text-left text-4xl md:text-2xl items-center gap-1">
+          Affirmation category:
+          <span className="text-xl md:text-2xl">{category}</span>
         </h3>
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-3">
           {CATEGORIES.map((c) => (
