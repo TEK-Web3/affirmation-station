@@ -33,13 +33,12 @@ export const MOODS = [
 
 export const CATEGORIES = [
   "Gratitude",
-  "Mindfulness and presence",
-  "Self-love and self-worth",
-  "Personal growth",
-  "Success and achievement",
+  "Mindfulness and Presence",
+  "Personal Growth",
+  "Success and Achievement",
   "Relationships",
-  "Health and welness",
+  "Health and Wellness",
   "Spirituality",
-  "Finances and abunance",
-  "Career and business",
+  "Finances and Abundance",
+  "Career and Business",
 ];
