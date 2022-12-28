@@ -5,11 +5,14 @@ import { generateAffirmations } from "./utils/openai";
 function App() {
   const [mood, setMood] = useState<string>("");
   const [category, setCategory] = useState<string>("");
+  const [affirmations, setAffirmations] = useState<string[] | undefined>();
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const canSubmit = Boolean(mood.length > 0 && category.length > 0);
   const resetState = () => {
     setMood("");
     setCategory("");
+    setAffirmations(undefined);
   };
 
   const moodIcon = (mood: string) => {
@@ -18,8 +21,15 @@ function App() {
   };
 
   const onClickHandler = () => {
-    generateAffirmations(mood).then((resp) => console.log(resp));
+    setIsLoading(true);
+    generateAffirmations(mood).then((resp) => {
+      setAffirmations(resp.choices[0].text?.split(/\r?\n/));
+      setIsLoading(false);
+    });
   };
+
+  const topFiveAffirmations =
+    affirmations?.filter((a) => a.length > 0).map((af) => af.slice(3)) ?? [];
 
   return (
     <div className="prose max-w-none w-full">
@@ -61,17 +71,32 @@ function App() {
           ))}
         </div>
 
+        {topFiveAffirmations.length > 0 && (
+          <div className="text-md text-primary mt-5 card bg-base-200 p-8 shadow-lg">
+            {topFiveAffirmations.map((a, i) => (
+              <div key={i} className="flex flex-row items-center gap-2 mb-1">
+                <span className="text-xl font-bold">{i + 1}.</span>
+                <span>{a}</span>
+              </div>
+            ))}
+          </div>
+        )}
+
         <div className="w-full flex flex-col justify-center items-center mt-10">
           <button
             disabled={!canSubmit}
-            className="btn w-fit btn-lg btn-primary normal-case text-white shadow-lg"
+            className={`btn w-full md:w-fit btn-lg btn-primary normal-case text-white shadow-lg ${
+              isLoading ? "loading" : "".trim()
+            }`}
             onClick={onClickHandler}
           >
-            {!canSubmit ? "Choose mood & Category" : "Generate Affirmations"}
+            {!canSubmit
+              ? "Choose mood & Category"
+              : `${isLoading ? "Generating" : "Generate"} Affirmations`}
           </button>
 
           {canSubmit && (
-            <button onClick={resetState} className="btn btn-ghost mt-2 gap-2">
+            <button onClick={resetState} className="btn btn-ghost my-2 gap-2">
               reset
               <svg
                 xmlns="http://www.w3.org/2000/svg"
