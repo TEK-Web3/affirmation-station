@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { MOODS, CATEGORIES } from "./utils/constants";
+import { generateAffirmations } from "./utils/openai";
 
 function App() {
   const [mood, setMood] = useState<string>("");
@@ -16,9 +17,8 @@ function App() {
     return emoji;
   };
 
-  const textColor = (mood: string) => {
-    const { color } = MOODS.find((m) => m.name === mood) || {};
-    return `text-${color?.split("-")[1]}`;
+  const onClickHandler = () => {
+    generateAffirmations(mood).then((resp) => console.log(resp));
   };
 
   return (
@@ -63,6 +63,7 @@ function App() {
           <button
             disabled={!canSubmit}
             className="btn w-fit btn-lg btn-primary normal-case text-white shadow-lg"
+            onClick={onClickHandler}
           >
             {!canSubmit ? "Choose mood & Category" : "Generate Affirmations"}
           </button>
