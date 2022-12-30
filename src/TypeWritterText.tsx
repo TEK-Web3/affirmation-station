@@ -1,8 +1,8 @@
 import { animated, useTransition } from "@react-spring/web";
 
-export function Affirmations({ affirmations }: { affirmations: string[] }) {
-  const transitions = useTransition(affirmations, {
-    trail: 2500,
+export function TypeWritterText({ list }: { list: string[] }) {
+  const transitions = useTransition(list, {
+    trail: 1800,
     from: { opacity: 0 },
     enter: { opacity: 1 },
   });
@@ -21,4 +21,4 @@ export function Affirmations({ affirmations }: { affirmations: string[] }) {
   });
 }
 
-export default Affirmations;
+export default TypeWritterText;

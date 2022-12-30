@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { MOODS, CATEGORIES } from "./utils/constants";
 import { generateAffirmations } from "./utils/openai";
-import { Affirmations } from "./Affirmations";
+import { TypeWritterText } from "./TypeWritterText";
 
 function App() {
   const [mood, setMood] = useState<string>("");
@@ -74,7 +74,7 @@ function App() {
 
         {topFiveAffirmations.length > 0 && (
           <div className="text-md text-primary mt-5 card bg-base-200 p-8 shadow-lg">
-            <Affirmations affirmations={topFiveAffirmations} />
+            <TypeWritterText list={topFiveAffirmations} />
           </div>
         )}
 
