@@ -73,7 +73,7 @@ function App() {
         </div>
 
         {topFiveAffirmations.length > 0 && (
-          <div className="text-md text-primary mt-5 card bg-base-200 p-8 shadow-lg">
+          <div className="text-md text-primary mt-5 card bg-base-200 p-4 px-8 shadow-lg">
             <TypeWritterText list={topFiveAffirmations} />
           </div>
         )}
@@ -93,7 +93,7 @@ function App() {
 
           {canSubmit && (
             <button onClick={resetState} className="btn btn-ghost my-2 gap-2">
-              reset
+              clear
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -110,6 +110,16 @@ function App() {
               </svg>
             </button>
           )}
+        </div>
+
+        <div className="flex flex-row w-full md:w-fit self-center justify-center items-center my-5 text-sm gap-3 bg-base-300 p-4 mx-auto">
+          Powered by:
+          <img
+            src="/open-ai-logo.png"
+            width="100px"
+            className="m-0"
+            alt="Powered By Open AI"
+          />
         </div>
       </div>
     </div>
