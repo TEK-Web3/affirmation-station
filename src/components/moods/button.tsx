@@ -7,7 +7,7 @@ export default function MoodButton({
 }) {
   return (
     <div
-      className={`${color} focus:${color} rounded-lg w-full h-full p-0 active:scale-95 transition ease-in-out duration-75`}
+      className={`${color} focus:${color} rounded-lg w-full h-full p-0 active:scale-95 transition ease-in-out duration-75 cursor-pointer`}
     >
       <div
         className={`w-full h-full rounded-lg ${
