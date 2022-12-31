@@ -1,17 +1,21 @@
-import TypeWritterText from "./TypeWritterText";
-import { useAffirmation } from "../utils/useAffirmation";
+import { animated, useTransition } from "@react-spring/web";
 
-export default function Affirmations() {
-  const { affirmations } = useAffirmation();
+export default function Affirmations({ list }: { list: string[] }) {
+  const transitions = useTransition(list, {
+    trail: 1000,
+    from: { opacity: 0 },
+    enter: { opacity: 1 },
+  });
 
-  if (!affirmations) return null;
-
-  const topFiveAffirmations =
-    affirmations?.filter((a) => a.length > 0).map((af) => af.slice(3)) ?? [];
-
-  return (
-    <div className="text-md text-primary mt-5 card bg-base-200 p-4 px-8 shadow-lg lg:mb-5">
-      <TypeWritterText list={topFiveAffirmations} />
-    </div>
-  );
+  return transitions((style, item, _ts, index) => {
+    return (
+      <div className="flex flex-row items-center my-0 text-primary-content">
+        <p className="my-1">
+          <animated.span className="leading-5" style={style}>
+            {item}
+          </animated.span>
+        </p>
+      </div>
+    );
+  });
 }

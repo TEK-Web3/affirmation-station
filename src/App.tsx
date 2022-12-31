@@ -1,7 +1,6 @@
 import Moods from "./components/moods";
 import Categories from "./components/categories";
 import Submit from "./components/submit";
-import Affirmations from "./components/affirmations";
 import PoweredBy from "./components/poweredBy";
 
 function App() {
@@ -10,7 +9,6 @@ function App() {
       <div className="max-w-xl mx-auto px-8">
         <Moods />
         <Categories />
-        <Affirmations />
         <Submit />
         <div className="hidden lg:flex mt-10">
           <PoweredBy />
