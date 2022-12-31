@@ -17,7 +17,7 @@ export default function Moods() {
         {MOODS.map(({ color, name }) => (
           <div
             key={name}
-            className="flex flex-1 justify-center items-center"
+            className="flex flex-1 justify-center items-center h-24 md:h-auto"
             onClick={() => useAffirmation.setState({ mood: name })}
           >
             <MoodButton color={color} isActive={Boolean(mood === name)} />
