@@ -6,7 +6,7 @@ export default function Moods() {
   const { mood } = useAffirmation();
   return (
     <>
-      <h1 className="mt-3 text-3xl mb-0 text-primary-content md:text-center">
+      <h1 className="mt-5 md:mt-10 text-3xl mb-0 text-primary-content md:text-center">
         Welcome Back
       </h1>
       <p className="mt-0 italic text-primary-content/80 text-sm md:text-center">

@@ -16,7 +16,7 @@ export default function Submit() {
   };
 
   return (
-    <div className="w-full lg:rounded-lg my-10 lg:mb-10 left-0 bg-base-200">
+    <div className="w-full lg:w-fit py-2 lg:py-0 lg:rounded-lg fixed lg:mx-auto lg:relative bottom-0 lg:bottom-auto lg:mb-10 left-0 bg-base-200 lg:mt-8">
       <button
         disabled={!canSubmit}
         className={`btn ${

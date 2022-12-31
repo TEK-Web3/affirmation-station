@@ -2,17 +2,19 @@ import Moods from "./components/moods";
 import Categories from "./components/categories";
 import Submit from "./components/submit";
 import Affirmations from "./components/affirmations";
-import Header from "./components/header";
+import PoweredBy from "./components/poweredBy";
 
 function App() {
   return (
-    <div className="prose max-w-none w-full">
+    <div className="prose max-w-none w-full mb-28 lg:mb-0">
       <div className="max-w-xl mx-auto px-8">
-        <Header />
         <Moods />
         <Categories />
         <Affirmations />
         <Submit />
+        <div className="hidden lg:flex mt-10">
+          <PoweredBy />
+        </div>
       </div>
     </div>
   );
