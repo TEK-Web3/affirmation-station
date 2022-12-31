@@ -2,7 +2,7 @@ import { CATEGORIES, MOODS } from "../utils/constants";
 import { useAffirmation } from "../utils/useAffirmation";
 
 export default function Categories() {
-  const { category, mood } = useAffirmation();
+  const { category, mood, affirmations } = useAffirmation();
 
   const getMoodColor = () => {
     const moodColor = MOODS.find((m) => m.name === mood);
@@ -19,7 +19,7 @@ export default function Categories() {
       <p className="mt-0 italic text-primary-content/80 text-sm">
         Select the category of affirmation you need
       </p>
-      <div className="flex flex-row flex-wrap justify-start md:justify-center gap-2.5 mb-10">
+      <div className="flex flex-row flex-wrap justify-start md:justify-center gap-2.5">
         {CATEGORIES.map((c) => (
           <div
             key={c}
