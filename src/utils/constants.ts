@@ -1,27 +1,35 @@
 export const MOODS = [
   {
-    name: "Happy",
-    color: "bg-info",
+    name: "Angry",
+    color: "bg-error",
   },
   {
-    name: "Excited",
-    color: "bg-success",
+    name: "Happy",
+    color: "bg-orange-300",
   },
   {
     name: "Relaxed",
     color: "bg-warning",
   },
   {
-    name: "Sleepy",
-    color: "bg-orange-300",
+    name: "Excited",
+    color: "bg-success",
   },
   {
-    name: "angry",
-    color: "bg-error",
+    name: "Tired",
+    color: "bg-info",
   },
   {
-    name: "grumpy",
-    color: "bg-stone-600",
+    name: "Sad",
+    color: "bg-blue-400",
+  },
+  {
+    name: "exhausted",
+    color: "bg-purple-800",
+  },
+  {
+    name: "bored",
+    color: "bg-gray-500",
   },
 ];
 

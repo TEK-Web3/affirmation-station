@@ -11,18 +11,18 @@ export default function MoodButton({
     >
       <div
         className={`w-full h-full rounded-lg ${
-          isActive ? "bg-black/10" : "bg-white/30"
-        } p-3 md:p-5`}
+          isActive ? "bg-black/10" : "bg-white/5"
+        } p-3 md:p-4`}
       >
         <div
           className={`w-full h-full rounded-lg ${
             isActive ? "bg-black/20" : "bg-white/30"
-          } p-3 md:p-5`}
+          } p-3 md:p-4`}
         >
           <div
             className={`w-full h-full rounded-lg ${
               isActive ? "bg-black/20" : "bg-white/50"
-            } p-2.5 sm:p-3 md:p-5`}
+            } p-2.5 sm:p-3 md:p-4`}
           >
             <div
               className={`w-full h-full rounded-lg ${

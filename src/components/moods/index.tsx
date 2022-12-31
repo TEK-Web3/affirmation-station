@@ -13,11 +13,11 @@ export default function Moods() {
         Select a color that corresponds to your mood
       </p>
 
-      <div className="grid grid-cols-3 gap-3 md:gap-10 max-w-md mx-auto">
+      <div className="grid grid-cols-4 gap-3 max-w-md mx-auto">
         {MOODS.map(({ color, name }) => (
           <div
             key={name}
-            className="flex flex-1 justify-center items-center h-24 md:h-auto"
+            className="flex flex-1 justify-center items-center"
             onClick={() => useAffirmation.setState({ mood: name })}
           >
             <MoodButton color={color} isActive={Boolean(mood === name)} />

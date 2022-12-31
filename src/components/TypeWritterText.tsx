@@ -9,14 +9,13 @@ export function TypeWritterText({ list }: { list: string[] }) {
 
   return transitions((style, item, _ts, index) => {
     return (
-      <div className="flex flex-row items-center gap-3 my-1">
-        <animated.span className="text-xl font-bold" style={style}>
-          {index + 1}
-        </animated.span>
-        <animated.span className="leading-5" style={style}>
-          {item}
-        </animated.span>
-      </div>
+      <ul className="flex flex-row items-center my-0 text-primary-content ml-0 pl-4">
+        <li>
+          <animated.span className="leading-5" style={style}>
+            {item}
+          </animated.span>
+        </li>
+      </ul>
     );
   });
 }
