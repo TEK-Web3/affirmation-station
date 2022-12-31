@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+h1,
+h2,
+h3 {
+  font-family: "Frank Ruhl Libre", serif;
+}
+
+.frank {
+  font-family: "Frank Ruhl Libre", serif;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}

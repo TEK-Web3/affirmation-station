@@ -1,44 +1,38 @@
 export const MOODS = [
   {
     name: "Happy",
-    emoji: "😀",
-    color: "btn-success",
-  },
-  {
-    name: "Sad",
-    emoji: "😢",
-    color: "btn-info",
-  },
-  {
-    name: "Sleepy",
-    emoji: "😴",
-    color: "btn-dark",
-  },
-  {
-    name: "Angry",
-    emoji: "😡",
-    color: "btn-error",
-  },
-  {
-    name: "Relaxed",
-    emoji: "😌",
-    color: "btn-warning",
+    color: "bg-info",
   },
   {
     name: "Excited",
-    emoji: "🤩",
-    color: "btn-primary",
+    color: "bg-success",
+  },
+  {
+    name: "Relaxed",
+    color: "bg-warning",
+  },
+  {
+    name: "Sleepy",
+    color: "bg-orange-300",
+  },
+  {
+    name: "angry",
+    color: "bg-error",
+  },
+  {
+    name: "grumpy",
+    color: "bg-stone-600",
   },
 ];
 
 export const CATEGORIES = [
   "Gratitude",
-  "Mindfulness and Presence",
+  "Mindfulness & Presence",
   "Personal Growth",
-  "Success and Achievement",
   "Relationships",
-  "Health and Wellness",
+  "Success & Achievement",
+  "Health & Wellness",
   "Spirituality",
-  "Finances and Abundance",
-  "Career and Business",
+  "Finances & Abundance",
+  "Career & Business",
 ];
