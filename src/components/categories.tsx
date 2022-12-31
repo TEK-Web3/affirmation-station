@@ -2,7 +2,7 @@ import { CATEGORIES, MOODS } from "../utils/constants";
 import { useAffirmation } from "../utils/useAffirmation";
 
 export default function Categories() {
-  const { category, mood, affirmations } = useAffirmation();
+  const { category, mood } = useAffirmation();
 
   const getMoodColor = () => {
     const moodColor = MOODS.find((m) => m.name === mood);
