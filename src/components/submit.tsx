@@ -54,7 +54,7 @@ export default function Submit() {
             </svg>
           )}
           <span className="text-md md:text-xl font-normal ml-3">
-            Give Me My Affirmations!
+            GET MY DAILY AFFIRMATIONS
           </span>
         </label>
       </div>
@@ -64,7 +64,7 @@ export default function Submit() {
           <div className="flex flex-col justify-center items-center">
             <img src="/puff.svg" width="75" />
             <h2 className="mt-0 text-primary-content">
-              Loading Affirmations...
+              Creating Affirmations...
             </h2>
           </div>
         ) : (
