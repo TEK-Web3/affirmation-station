@@ -15,7 +15,7 @@ export default function Submit() {
     if (!canSubmit) return;
 
     useAffirmation.setState({ isLoading: true });
-    generateAffirmations(mood).then((resp) => {
+    generateAffirmations(mood, category).then((resp) => {
       useAffirmation.setState({
         affirmations: resp.choices[0].text?.split(/\r?\n/),
       });
