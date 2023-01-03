@@ -14,13 +14,17 @@ export default function Moods() {
       </p>
 
       <div className="grid grid-cols-4 gap-3 max-w-md mx-auto">
-        {MOODS.map(({ color, name }) => (
+        {MOODS.map(({ color, name, emoji }) => (
           <div
             key={name}
             className="flex flex-1 justify-center items-center"
             onClick={() => useAffirmation.setState({ mood: name })}
           >
-            <MoodButton color={color} isActive={Boolean(mood === name)} />
+            <MoodButton
+              emoji={emoji}
+              color={color}
+              isActive={Boolean(mood === name)}
+            />
           </div>
         ))}
       </div>

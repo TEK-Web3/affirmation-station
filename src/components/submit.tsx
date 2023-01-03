@@ -25,7 +25,7 @@ export default function Submit() {
 
   return (
     <>
-      <div className="w-full lg:w-fit lg:py-0 lg:rounded-lg fixed lg:mx-auto lg:relative bottom-0 lg:bottom-auto lg:mb-10 left-0 bg-base-200 lg:mt-8">
+      <div className="w-full md:w-fit md:py-0 md:rounded-lg fixed md:mx-auto md:relative bottom-0 md:bottom-auto md:mb-10 left-0 bg-base-200 md:mt-8">
         <label
           htmlFor={canSubmit ? "submit" : "disabled"}
           className={`btn ${
